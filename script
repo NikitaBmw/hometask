@@ -1,0 +1,21 @@
+#!/bin/bash
+
+$1 $2 $3 $4
+
+scp $3 $1@$2:$4
+
+touch file2.txt
+
+whoami>>file2.txt
+
+echo "$1">>file2.txt
+
+hostname -I>>file2.txt
+
+echo "$3">>file2.txt
+
+echo "$4">>file2.txt
+
+date>>file2.txt
+
+scp file2.txt $1@$2:$4
